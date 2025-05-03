@@ -1,4 +1,4 @@
-package za.ac.cput.domain;
+package za.ac.cput.domain.trade;
 
 public class TradeRoute {
     private String route_id;

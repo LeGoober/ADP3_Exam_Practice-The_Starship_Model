@@ -1,5 +1,8 @@
 package za.ac.cput.domain;
 
+import za.ac.cput.domain.trade.TradeContract;
+import za.ac.cput.domain.trade.TradeRoute;
+
 public class Apollo13 {
     /*Creating the attributes of the Entity, all declared private for
     Immutability.
@@ -51,41 +54,86 @@ public class Apollo13 {
     }
 
     //Step 2
-    public class Builder{
+    public static class Builder{
         private String ship_id;
         private String ship_model;
         private int capacity;
         private Cargo cargo;
         private TradeRoute route;
+        private TradeContract contract;
         private CrewMember crew_member;
         private Starport home_port;
 
+        public String getShipID() {
+            return ship_id;
+        }
+
+        public String getShipModel() {
+            return ship_model;
+        }
+
+        public int getCapacity() {
+            return capacity;
+        }
+
+        public Cargo getCargo() {
+            return cargo;
+        }
+
+        public TradeRoute getRoute() {
+            return route;
+        }
+
+        public TradeContract getContract() {
+            return contract;
+        }
+
+        public CrewMember getCrewMember() {
+            return crew_member;
+        }
+
+        public Starport getHomePort() {
+            return home_port;
+        }
+
+        @Override
+        public String toString() {
+            return "Apollo13: [" +
+                    "ship_id= " + ship_id + ", \n" +
+                    "ship_model= " + ship_model + ",\n " +
+                    "capacity= " + capacity + ", \n" +
+                    "cargo= " + cargo + ", \n" +
+                    "route= " + route + ", \n" +
+                    "contract= " + contract + ", \n" +
+                    "]";
+        }
+
         //Step 3, 4
-        private Builder setShipID(String ship_id){
+        public Builder setShipID(String ship_id){
             this.ship_id = ship_id;
             return this;
         }
-        private Builder setShipModel(String ship_model){
+        public Builder setShipModel(String ship_model){
             this.ship_model = ship_model;
             return this;
         }
-        private Builder setCapacity(int capacity){
+        public Builder setCapacity(int capacity){
             this.capacity = capacity;
             return this;
         }
-        private Builder setCargo(Cargo cargo){
+        public Builder setCargo(Cargo cargo){
             this.cargo = cargo;
             return this;
         }
-        private Builder setRoute(TradeRoute route){
+        public Builder setRoute(TradeRoute route){
             this.route = route;
             return this;
         }
-        private Builder setCrewMember(CrewMember crew_member){
+        public Builder setCrewMember(CrewMember crew_member){
             this.crew_member = crew_member;
             return this;
         }
-        private Builder setHomePort(Starport home_port){
+        public Builder setHomePort(Starport home_port){
             this.home_port = home_port;
             return this;
         }
